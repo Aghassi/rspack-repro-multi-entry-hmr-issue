@@ -22,7 +22,16 @@ const config = {
     main: "./src/index",
     other: "./src/other",
   },
-  plugins: [new HtmlWebpackPlugin()],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./src/index.html",
+      filename: "index.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/index.html",
+      filename: "other.html",
+    }),
+  ],
   output: {
     clean: true,
     path: isRunningWebpack
