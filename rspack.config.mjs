@@ -14,9 +14,13 @@ if (!isRunningRspack && !isRunningWebpack) {
  */
 const config = {
   mode: "development",
+  devServer: {
+    hot: true,
+  },
   devtool: false,
   entry: {
     main: "./src/index",
+    other: "./src/other",
   },
   plugins: [new HtmlWebpackPlugin()],
   output: {
